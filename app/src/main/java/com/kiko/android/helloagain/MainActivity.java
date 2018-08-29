@@ -33,12 +33,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Tela2Activity.class);
         Random rand = new Random();
 
-        int sorteado = rand.nextInt(60) + 1;
+        int sorteado = rand.nextInt(2) ;
         String numero1 = new Integer(sorteado).toString();
 
         intent.putExtra("KEY",numero1);
 
-        int sorteado2 = rand.nextInt(60 ) + 1;
+        int sorteado2 = sorteado;
+        do {
+            sorteado2 = rand.nextInt(2) ;
+        }while(sorteado == sorteado2);
+
         String numero2 = new Integer(sorteado2).toString();
         intent.putExtra("KEY2",numero2);
 
